@@ -1,0 +1,19 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /api/v1/.*
+  script: app.api.v1.wsgi.app
+
+libraries:
+- name: ujson
+  version: '1.35'
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?\..*$
+- ^node_modules/
+- ^tests/

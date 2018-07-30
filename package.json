@@ -1,0 +1,10 @@
+{
+  "name": "app-engine-falcon-example",
+  "scripts": {
+    "precommit": "lerna run --concurrency 1 --stream precommit"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lerna": "^3.0.0-rc.0"
+  }
+}

@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+from __future__ import (
+    absolute_import,
+    division,
+    print_function,
+    unicode_literals,
+)
+
+import pytest
+from falcon import testing
+
+import app.api.v1.wsgi
+
+
+@pytest.fixture
+def client(testbed):
+    return testing.TestClient(app.api.v1.wsgi.app)
