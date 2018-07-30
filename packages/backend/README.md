@@ -8,15 +8,12 @@
     - `brew install pipenv`
 - mypy
     - `brew install mypy`
-- Yarn
-    - `brew install yarn`
 
 ## Setup
 
 ```
 pipenv install -d
 pipenv run pip install -r <(pipenv lock -r) -t lib
-yarn
 ```
 
 ## Test
