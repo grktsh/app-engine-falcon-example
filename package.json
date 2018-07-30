@@ -1,5 +1,5 @@
 {
-  "name": "app-engine-falcon-example",
+  "private": true,
   "scripts": {
     "precommit": "lerna run --concurrency 1 --stream precommit"
   },
