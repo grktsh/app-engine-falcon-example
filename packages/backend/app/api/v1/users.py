@@ -13,10 +13,12 @@ from ...entities.user import User
 
 class Collection(object):
     def on_get(self, req, resp):
+        # type: (falcon.Request, falcon.Response) -> None
         users = User.query().order(User.key)
         resp.media = [user.to_dict() for user in users]
 
     def on_post(self, req, resp):
+        # type: (falcon.Request, falcon.Response) -> None
         user = User(email=req.media['email'])
         user.put()
 
@@ -26,6 +28,7 @@ class Collection(object):
 
 class Item(object):
     def on_get(self, req, resp, user_id):
+        # type: (falcon.Request, falcon.Response, str) -> None
         user = User.get_by_id(int(user_id))
         if user is None:
             raise falcon.HTTPNotFound()

@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 falcon = "~=1.4"
+typing = "~=3.6"
 
 [dev-packages]
 pytest = "~=3.6"

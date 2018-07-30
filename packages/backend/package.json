@@ -8,6 +8,7 @@
         "pipenv run isort --atomic",
         "pipenv run yapf --in-place",
         "pipenv run flake8",
+        "mypy",
         "git add"
       ]
     },
