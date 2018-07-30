@@ -3,11 +3,16 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.py": [
-      "pipenv run isort --atomic",
-      "pipenv run yapf --in-place --exclude '*/tests/appengine.py'",
-      "pipenv run flake8",
-      "git add"
+    "linters": {
+      "*.py": [
+        "pipenv run isort --atomic",
+        "pipenv run yapf --in-place",
+        "pipenv run flake8",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "**/tests/appengine.py"
     ]
   },
   "devDependencies": {
