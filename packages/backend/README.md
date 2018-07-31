@@ -24,6 +24,10 @@ pipenv run pytest --cov=app -n 2 tests
 
 ## Format and Lint with lint-staged
 
-See [package.json](./package.json) and [setup.cfg](./setup.cfg).
+1. Sort imports with isort
+2. Format with YAPF
+3. Lint with flake8
+    - Double quotes are warned with flake8-quotes
+4. Lint with mypy
 
-Double quotes are warned with flake8-quotes.
+See [package.json](./package.json) and [setup.cfg](./setup.cfg) for details.
