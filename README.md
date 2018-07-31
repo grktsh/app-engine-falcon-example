@@ -9,5 +9,5 @@
 
 ```
 yarn
-yarn run lerna bootstrap
+yarn lerna bootstrap
 ```
