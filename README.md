@@ -9,5 +9,4 @@
 
 ```
 yarn
-yarn lerna bootstrap
 ```
