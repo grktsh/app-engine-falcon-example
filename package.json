@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "precommit": "lerna run --concurrency 1 --stream precommit"
+    "precommit": "wsrun precommit --serial"
   },
   "devDependencies": {
     "husky": "^0.14.3",
-    "lerna": "^3.0.0-rc.0"
+    "wsrun": "^2.2.1"
   },
   "workspaces": [
     "packages/*"
