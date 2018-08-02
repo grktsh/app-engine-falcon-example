@@ -8,8 +8,8 @@ from __future__ import (
 
 import falcon
 
-from . import users
-from .version import Version
+from .v1 import users
+from .v1.version import Version
 
 app = falcon.API()
 app.add_route('/api/v1/version', Version())

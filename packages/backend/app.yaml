@@ -4,7 +4,7 @@ threadsafe: true
 
 handlers:
 - url: /api/v1/.*
-  script: app.api.v1.wsgi.app
+  script: app.api.wsgi.app
 
 libraries:
 - name: ujson

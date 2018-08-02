@@ -9,9 +9,9 @@ from __future__ import (
 import pytest
 from falcon import testing
 
-import app.api.v1.wsgi
+import app.api.wsgi
 
 
 @pytest.fixture
 def client(testbed):
-    return testing.TestClient(app.api.v1.wsgi.app)
+    return testing.TestClient(app.api.wsgi.app)
