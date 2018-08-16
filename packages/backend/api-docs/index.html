@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>API docs</title>
+  <link rel="stylesheet" href="//unpkg.com/swagger-ui-dist@3/swagger-ui.css">
+</head>
+<body>
+  <main id="swagger-ui"></main>
+  <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+  <script src="//unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      window.ui = SwaggerUIBundle({
+        url: '/api-docs/openapi.yaml',
+        dom_id: '#swagger-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset,
+        ],
+        layout: 'StandaloneLayout',
+      });
+    });
+  </script>
+</body>
+</html>

@@ -5,6 +5,14 @@ threadsafe: true
 handlers:
 - url: /api/v1/.*
   script: app.api.wsgi.app
+- url: /api-docs/?$
+  static_files: api-docs/index.html
+  upload: api-docs/index\.html
+  login: required
+- url: /api-docs/openapi\.yaml
+  static_files: api-docs/openapi.yaml
+  upload: api-docs/openapi\.yaml
+  login: required
 
 libraries:
 - name: ujson
