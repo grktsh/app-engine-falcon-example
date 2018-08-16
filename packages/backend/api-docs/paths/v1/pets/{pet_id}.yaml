@@ -1,0 +1,34 @@
+get:
+  responses:
+    '200':
+      description: Pet detail
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Pet'
+    '404':
+      $ref: '#/components/responses/NotFound'
+patch:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PetUpdate'
+    required: true
+  responses:
+    '200':
+      description: Pet detail
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Pet'
+    '404':
+      $ref: '#/components/responses/NotFound'
+delete:
+  responses:
+    '204':
+      description: Success deletion
+    '404':
+      $ref: '#/components/responses/NotFound'
+parameters:
+- $ref: '#/components/parameters/pet_id'

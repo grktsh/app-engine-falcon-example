@@ -1,0 +1,5 @@
+allOf:
+- $ref: '#/components/schemas/PetUpdate'
+- type: object
+  required:
+  - name

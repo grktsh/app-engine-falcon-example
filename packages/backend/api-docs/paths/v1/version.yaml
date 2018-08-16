@@ -1,0 +1,15 @@
+get:
+  responses:
+    '200':
+      description: Application version
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+            - version
+            properties:
+              version:
+                type: string
+          example:
+            version: 0.1.0

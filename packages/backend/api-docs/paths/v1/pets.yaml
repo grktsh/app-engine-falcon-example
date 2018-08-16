@@ -1,0 +1,26 @@
+get:
+  responses:
+    '200':
+      description: Pet list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Pet'
+post:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/PetNew'
+    required: true
+  responses:
+    '201':
+      description: Success creation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Pet'
+    '400':
+      $ref: '#/components/responses/ValidationError'
