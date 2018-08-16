@@ -11,5 +11,5 @@ from google.appengine.ext import ndb
 from .base import BaseModel
 
 
-class User(BaseModel):
-    email = ndb.StringProperty(required=True)
+class Pet(BaseModel):
+    name = ndb.StringProperty(required=True)

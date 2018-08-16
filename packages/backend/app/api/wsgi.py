@@ -8,10 +8,9 @@ from __future__ import (
 
 import falcon
 
-from .v1 import users
-from .v1.version import Version
+from .v1 import pets, version
 
 app = falcon.API()
-app.add_route('/api/v1/version', Version())
-app.add_route('/api/v1/users', users.Collection())
-app.add_route('/api/v1/users/{user_id}', users.Item())
+app.add_route('/api/v1/version', version.Version())
+app.add_route('/api/v1/pets', pets.Collection())
+app.add_route('/api/v1/pets/{pet_id}', pets.Item())
