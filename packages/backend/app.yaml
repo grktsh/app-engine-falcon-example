@@ -13,6 +13,7 @@ handlers:
   static_files: api-docs/openapi.yaml
   upload: api-docs/openapi\.yaml
   login: required
+  application_readable: true
 
 libraries:
 - name: ujson
