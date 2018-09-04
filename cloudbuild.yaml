@@ -1,0 +1,27 @@
+steps:
+
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: bash
+  args:
+  - -c
+  - |
+    set -ex
+    pip install pipenv==2018.7.1
+    pipenv install -d --system --deploy
+    pipenv run pytest tests
+    pipenv run pip install -r <(pipenv lock -r) -t lib
+  env:
+  - LC_ALL=C.UTF-8
+  - LANG=C.UTF-8
+  - GAE_SDK_PATH=/builder/google-cloud-sdk/platform/google_appengine
+  dir: packages/backend
+
+- name: gcr.io/cloud-builders/gcloud
+  args:
+  - app
+  - deploy
+  - --no-promote
+  - --version=$BRANCH_NAME
+  - --project=$PROJECT_ID
+  - --quiet
+  dir: packages/backend
