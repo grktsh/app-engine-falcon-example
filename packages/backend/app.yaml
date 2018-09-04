@@ -5,14 +5,19 @@ threadsafe: true
 handlers:
 - url: /api/v1/.*
   script: app.api.wsgi.app
+  secure: always
+
 - url: /api-docs/?$
   static_files: api-docs/index.html
   upload: api-docs/index\.html
   login: admin
+  secure: always
+
 - url: /api-docs/openapi\.yaml
   static_files: api-docs/openapi.yaml
   upload: api-docs/openapi\.yaml
   login: admin
+  secure: always
   application_readable: true
 
 libraries:
