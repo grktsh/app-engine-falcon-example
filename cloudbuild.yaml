@@ -6,10 +6,10 @@ steps:
   - -c
   - |
     set -ex
-    pip install pipenv==2018.7.1
-    pipenv install -d --system --deploy
-    pipenv run pytest tests
-    pipenv run pip install -r <(pipenv lock -r) -t lib
+    pip install pipenv==2018.10.13
+    pipenv install --dev --system --deploy
+    pytest tests
+    pip install -r <(pipenv lock -r) -t lib
   env:
   - LC_ALL=C.UTF-8
   - LANG=C.UTF-8
