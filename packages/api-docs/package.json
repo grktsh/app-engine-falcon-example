@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "api-docs",
+  "version": "0.1.0",
+  "scripts": {
+    "precommit": "npm run build",
+    "build": "./build.sh > openapi.yaml && swagger-cli validate openapi.yaml",
+    "watch": "chokidar '**/*.yaml' -i app.yaml -i openapi.yaml -c 'npm run build'"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.1",
+    "swagger-cli": "^2.2.0"
+  }
+}
