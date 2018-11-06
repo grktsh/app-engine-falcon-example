@@ -1,23 +1,18 @@
 # -*- coding: utf-8 -*-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
-
-from typing import (  # noqa: F401
-    Any,
-    Dict,
-    List,
-    Optional,
-    Set,
-    Text,
-    Tuple,
-    Union,
-)
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from google.appengine.ext import ndb
+from typing import Any  # noqa: F401
+from typing import Dict  # noqa: F401
+from typing import List  # noqa: F401
+from typing import Optional  # noqa: F401
+from typing import Set  # noqa: F401
+from typing import Text  # noqa: F401
+from typing import Tuple  # noqa: F401
+from typing import Union  # noqa: F401
 
 
 class BaseModel(ndb.Model):

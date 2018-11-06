@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-from __future__ import (
-    absolute_import,
-    division,
-    print_function,
-    unicode_literals,
-)
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import falcon
 
-from app.api.hooks import extract_pet
-
 from ...entities.pets import Pet
+from app.api.hooks import extract_pet
 
 
 class Collection(object):

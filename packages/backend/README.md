@@ -26,7 +26,7 @@ pipenv run pytest --cov=app -n 2 tests
 
 ## Format and Lint with lint-staged
 
-1. Sort imports with isort
+1. Sort imports with reorder-python-imports
 2. Format with FFFFFF
 3. Lint with flake8
 4. Lint with mypy
