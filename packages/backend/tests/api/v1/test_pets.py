@@ -19,14 +19,8 @@ def test_collection_get(client):
 
     assert response.status == falcon.HTTP_OK
     assert len(response.json) == 2
-    assert response.json[0] == {
-        'id': pet_key1.id(),
-        'name': 'momo',
-    }
-    assert response.json[1] == {
-        'id': pet_key2.id(),
-        'name': 'kuro',
-    }
+    assert response.json[0] == {'id': pet_key1.id(), 'name': 'momo'}
+    assert response.json[1] == {'id': pet_key2.id(), 'name': 'kuro'}
 
 
 def test_collection_post(client):
@@ -37,10 +31,7 @@ def test_collection_post(client):
     assert pets[0].name == 'hana'
 
     assert response.status == falcon.HTTP_CREATED
-    assert response.json == {
-        'id': pets[0].key.id(),
-        'name': 'hana',
-    }
+    assert response.json == {'id': pets[0].key.id(), 'name': 'hana'}
 
 
 def test_collection_post_validation_error(client):
@@ -55,10 +46,7 @@ def test_item_get(client):
     response = client.simulate_get('/api/v1/pets/{}'.format(pet_key.id()))
 
     assert response.status == falcon.HTTP_OK
-    assert response.json == {
-        'id': pet_key.id(),
-        'name': 'sora',
-    }
+    assert response.json == {'id': pet_key.id(), 'name': 'sora'}
 
 
 def test_item_get_not_found(client):
@@ -75,10 +63,7 @@ def test_item_patch(client):
     )
 
     assert response.status == falcon.HTTP_OK
-    assert response.json == {
-        'id': pet_key.id(),
-        'name': 'chibi',
-    }
+    assert response.json == {'id': pet_key.id(), 'name': 'chibi'}
 
     pets = list(Pet.query())
     assert len(pets) == 1
@@ -93,10 +78,7 @@ def test_item_patch_without_name(client):
     )
 
     assert response.status == falcon.HTTP_OK
-    assert response.json == {
-        'id': pet_key.id(),
-        'name': 'tama',
-    }
+    assert response.json == {'id': pet_key.id(), 'name': 'tama'}
 
     pets = list(Pet.query())
     assert len(pets) == 1

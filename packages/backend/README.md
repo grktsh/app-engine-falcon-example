@@ -8,6 +8,8 @@
     - `brew install pipenv`
 - mypy
     - `brew install mypy`
+- FFFFFF
+    - `python3 -m pip install --user ffffff`
 
 ## Setup
 
@@ -25,9 +27,8 @@ pipenv run pytest --cov=app -n 2 tests
 ## Format and Lint with lint-staged
 
 1. Sort imports with isort
-2. Format with YAPF
+2. Format with FFFFFF
 3. Lint with flake8
-    - Double quotes are warned with flake8-quotes
 4. Lint with mypy
 
 See [package.json](./package.json) and [setup.cfg](./setup.cfg) for details.

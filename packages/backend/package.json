@@ -9,7 +9,7 @@
     "linters": {
       "*.py": [
         "pipenv run isort --atomic",
-        "pipenv run yapf --in-place",
+        "ffffff",
         "pipenv run flake8",
         "mypy",
         "git add"

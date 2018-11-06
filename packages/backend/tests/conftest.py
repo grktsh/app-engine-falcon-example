@@ -6,4 +6,4 @@ from __future__ import (
     unicode_literals,
 )
 
-pytest_plugins = ('tests.appengine', )
+pytest_plugins = ('tests.appengine',)
