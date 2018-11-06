@@ -6,8 +6,6 @@ from __future__ import unicode_literals
 
 from google.appengine.ext import ndb
 
-from .base import BaseModel
 
-
-class Pet(BaseModel):
+class Pet(ndb.Model):
     name = ndb.StringProperty(required=True)
