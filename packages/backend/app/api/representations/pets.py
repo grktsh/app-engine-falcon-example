@@ -9,6 +9,6 @@ from typing import Dict  # noqa: F401
 from ...entities.pets import Pet  # noqa: F401
 
 
-def pet_to_dict(pet):
+def pet_dict(pet):
     # type: (Pet) -> Dict
     return {'id': pet.key.id(), 'name': pet.name}

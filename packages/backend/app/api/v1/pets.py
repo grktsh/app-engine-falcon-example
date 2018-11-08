@@ -8,14 +8,14 @@ import falcon
 
 from ...entities.pets import Pet
 from ..hooks import extract_pet
-from ..representations.pets import pet_to_dict
+from ..representations.pets import pet_dict
 
 
 class Collection(object):
     def on_get(self, req, resp):
         # type: (falcon.Request, falcon.Response) -> None
         pets = Pet.query().order(Pet.key)
-        resp.media = [pet_to_dict(pet) for pet in pets]
+        resp.media = [pet_dict(pet) for pet in pets]
 
     def on_post(self, req, resp):
         # type: (falcon.Request, falcon.Response) -> None
@@ -25,7 +25,7 @@ class Collection(object):
         pet = Pet(name=req.media['name'])
         pet.put()
 
-        resp.media = pet_to_dict(pet)
+        resp.media = pet_dict(pet)
         resp.status = falcon.HTTP_CREATED
 
 
@@ -33,7 +33,7 @@ class Collection(object):
 class Item(object):
     def on_get(self, req, resp, pet):
         # type: (falcon.Request, falcon.Response, Pet) -> None
-        resp.media = pet_to_dict(pet)
+        resp.media = pet_dict(pet)
 
     def on_patch(self, req, resp, pet):
         # type: (falcon.Request, falcon.Response, Pet) -> None
@@ -41,7 +41,7 @@ class Item(object):
             pet.name = req.media['name']
             pet.put()
 
-        resp.media = pet_to_dict(pet)
+        resp.media = pet_dict(pet)
 
     def on_delete(self, req, resp, pet):
         # type: (falcon.Request, falcon.Response, Pet) -> None
