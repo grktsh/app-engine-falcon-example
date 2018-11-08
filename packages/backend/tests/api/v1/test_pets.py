@@ -72,7 +72,7 @@ def test_item_patch_without_name(client):
     pet_key = Pet(name='tama').put()
 
     response = client.simulate_patch(
-        '/api/v1/pets/{}'.format(pet_key.id()), json={}
+        '/api/v1/pets/{}'.format(pet_key.id()), json={'foo': 'bar'}
     )
 
     assert response.status == falcon.HTTP_OK

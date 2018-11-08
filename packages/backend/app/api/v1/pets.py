@@ -5,6 +5,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import falcon
+import falcon_oas  # noqa: F401
 
 from ...entities.pets import Pet
 from ..hooks import extract_pet
@@ -18,11 +19,8 @@ class Collection(object):
         resp.media = [pet_dict(pet) for pet in pets]
 
     def on_post(self, req, resp):
-        # type: (falcon.Request, falcon.Response) -> None
-        if 'name' not in req.media:
-            raise falcon.HTTPBadRequest()
-
-        pet = Pet(name=req.media['name'])
+        # type: (falcon_oas.Request, falcon.Response) -> None
+        pet = Pet(name=req.oas_media['name'])
         pet.put()
 
         resp.media = pet_dict(pet)
@@ -36,11 +34,12 @@ class Item(object):
         resp.media = pet_dict(pet)
 
     def on_patch(self, req, resp, pet):
-        # type: (falcon.Request, falcon.Response, Pet) -> None
-        if 'name' in req.media:
-            pet.name = req.media['name']
+        # type: (falcon_oas.Request, falcon.Response, Pet) -> None
+        try:
+            pet.name = req.oas_media['name']
             pet.put()
-
+        except KeyError:
+            pass
         resp.media = pet_dict(pet)
 
     def on_delete(self, req, resp, pet):

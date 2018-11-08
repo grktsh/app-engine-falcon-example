@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 falcon = "~=1.4"
+falcon-oas = "~=0.1.0"
 typing = "~=3.6"
 
 [dev-packages]

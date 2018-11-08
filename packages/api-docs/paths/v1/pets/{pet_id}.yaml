@@ -1,3 +1,4 @@
+x-falcon-resource: v1.pets:Item
 get:
   responses:
     '200':

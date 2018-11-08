@@ -7,6 +7,7 @@ servers:
 - url: /api
 paths:
   /v1/pets:
+    x-falcon-resource: v1.pets:Collection
     get:
       responses:
         '200':
@@ -34,6 +35,7 @@ paths:
         '400':
           $ref: '#/components/responses/ValidationError'
   /v1/pets/{pet_id}:
+    x-falcon-resource: v1.pets:Item
     get:
       responses:
         '200':

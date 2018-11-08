@@ -13,7 +13,7 @@ from ..entities.pets import Pet
 
 def extract_pet(req, resp, resource, params):
     # type: (falcon.Request, falcon.Response, Any, Dict) -> None
-    pet = Pet.get_by_id(int(params['pet_id']))
+    pet = Pet.get_by_id(params['pet_id'])
     if pet is None:
         raise falcon.HTTPNotFound()
 
