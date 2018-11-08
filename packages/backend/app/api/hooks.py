@@ -8,7 +8,7 @@ import falcon
 from typing import Any  # noqa: F401
 from typing import Dict  # noqa: F401
 
-from app.entities.pets import Pet
+from ..entities.pets import Pet
 
 
 def extract_pet(req, resp, resource, params):
