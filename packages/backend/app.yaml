@@ -7,15 +7,11 @@ handlers:
   script: app.api.wsgi.app
   secure: always
 
-libraries:
-- name: yaml
-  version: '3.10'
-
 skip_files:
 - ^(.*/)?#.*#$
 - ^(.*/)?.*~$
 - ^(.*/)?.*\.py[co]$
 - ^(.*/)?\..*$
 - ^node_modules/(?!api-docs).*$
-- ^node_modules/api-docs/(?!openapi\.yaml).*$
+- ^node_modules/api-docs/(?!openapi\.json).*$
 - ^tests/

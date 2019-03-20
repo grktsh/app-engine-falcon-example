@@ -10,9 +10,9 @@ handlers:
   login: admin
   secure: always
 
-- url: /openapi\.yaml
-  static_files: openapi.yaml
-  upload: openapi\.yaml
+- url: /openapi\.json
+  static_files: openapi.json
+  upload: openapi\.json
   login: admin
   secure: always
 

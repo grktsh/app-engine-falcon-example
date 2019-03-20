@@ -3,12 +3,19 @@
   "name": "api-docs",
   "version": "0.1.0",
   "scripts": {
-    "precommit": "npm run build",
-    "build": "./build.sh > openapi.yaml && swagger-cli validate openapi.yaml",
-    "watch": "chokidar '**/*.yaml' -i app.yaml -i openapi.yaml -c 'npm run build'"
+    "precommit": "lint-staged",
+    "build": "./build.sh | node -p \"JSON.stringify(require('js-yaml').safeLoad(require('fs').readFileSync(0, 'utf8')), null, '')\" > openapi.json && swagger-cli validate openapi.json",
+    "watch": "chokidar 'src/**/*.yaml' -c 'npm run build'"
+  },
+  "lint-staged": {
+    "src/**/*.yaml": [
+      "npm run build",
+      "git add"
+    ]
   },
   "devDependencies": {
     "chokidar-cli": "^1.2.1",
+    "js-yaml": "^3.12.2",
     "swagger-cli": "^2.2.0"
   }
 }
