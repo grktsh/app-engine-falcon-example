@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 
 from typing import Dict
 
-from ...entities.pets import Pet
+from ..models.pets import Pet
 
 
 def pet_dict(pet):

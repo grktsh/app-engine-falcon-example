@@ -4,8 +4,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from app.api.representations.pets import pet_dict
-from app.entities.pets import Pet
+from app.models.pets import Pet
+from app.representations.pets import pet_dict
 
 
 def test_pet_to_dict(testbed):

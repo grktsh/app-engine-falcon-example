@@ -8,7 +8,7 @@ import falcon
 from typing import Any
 from typing import Dict
 
-from ..entities.pets import Pet
+from ..models.pets import Pet
 
 
 def extract_pet(req, resp, resource, params):

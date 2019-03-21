@@ -7,7 +7,7 @@ from __future__ import unicode_literals
 import falcon
 import pytest
 
-from app.entities.pets import Pet
+from app.models.pets import Pet
 
 
 def test_collection_get(client):

@@ -7,9 +7,9 @@ from __future__ import unicode_literals
 import falcon
 import falcon_oas
 
-from ...entities.pets import Pet
+from ...models.pets import Pet
+from ...representations.pets import pet_dict
 from ..hooks import extract_pet
-from ..representations.pets import pet_dict
 
 
 class Collection(object):
