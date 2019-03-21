@@ -16,5 +16,5 @@ spec_path = os.path.join(here, '../../node_modules/api-docs/openapi.json')
 with open(spec_path) as f:
     spec_dict = json.load(f)
 
-app = create_api(spec_dict, base_module='app.api')
+app = create_api(spec_dict, base_module='app')
 app.add_route('/api/v1/version', version.Version())

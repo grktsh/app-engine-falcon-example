@@ -5,6 +5,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import falcon
+import pytest
 
 from app.entities.pets import Pet
 
@@ -92,7 +93,10 @@ def test_item_patch_not_found(client):
 def test_item_delete(client):
     pet_key = Pet(name='mike').put()
 
-    response = client.simulate_delete('/api/v1/pets/{}'.format(pet_key.id()))
+    response = client.simulate_delete(
+        '/api/v1/pets/{}'.format(pet_key.id()),
+        headers={'X-API-Key': str('secret')},
+    )
 
     assert response.status == falcon.HTTP_NO_CONTENT
 
@@ -101,6 +105,26 @@ def test_item_delete(client):
 
 
 def test_item_delete_not_found(client):
-    response = client.simulate_delete('/api/v1/pets/1')
+    response = client.simulate_delete(
+        '/api/v1/pets/1', headers={'X-API-Key': str('secret')}
+    )
 
     assert response.status == falcon.HTTP_NOT_FOUND
+
+
+@pytest.mark.parametrize('headers', [{'X-API-Key': str('unknown')}, {}])
+def test_item_delete_when_invalid_api_key(client, headers):
+    pet_key = Pet(name='mike').put()
+
+    response = client.simulate_delete(
+        '/api/v1/pets/{}'.format(pet_key.id()), headers=headers
+    )
+
+    assert response.status == falcon.HTTP_FORBIDDEN
+
+
+@pytest.mark.parametrize('headers', [{'X-API-Key': str('unknown')}, {}])
+def test_item_delete_not_found_when_invalid_api_key(client, headers):
+    response = client.simulate_delete('/api/v1/pets/1', headers=headers)
+
+    assert response.status == falcon.HTTP_FORBIDDEN

@@ -1,4 +1,4 @@
-x-falcon-resource: v1.pets:Item
+x-falcon-resource: api.v1.pets:Item
 get:
   responses:
     '200':
@@ -31,5 +31,7 @@ delete:
       description: Success deletion
     '404':
       $ref: '#/components/responses/NotFound'
+  security:
+  - api_key: []
 parameters:
 - $ref: '#/components/parameters/pet_id'

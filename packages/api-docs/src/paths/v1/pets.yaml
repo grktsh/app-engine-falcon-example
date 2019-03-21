@@ -1,4 +1,4 @@
-x-falcon-resource: v1.pets:Collection
+x-falcon-resource: api.v1.pets:Collection
 get:
   responses:
     '200':
