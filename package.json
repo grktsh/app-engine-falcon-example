@@ -1,14 +1,20 @@
 {
   "private": true,
-  "scripts": {
-    "precommit": "wsrun precommit --serial"
-  },
   "devDependencies": {
-    "husky": "^0.14.3",
-    "wsrun": "^2.2.1"
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5"
   },
   "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/api-docs"]
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/api-docs"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn workspaces run precommit"
+    }
   }
 }
