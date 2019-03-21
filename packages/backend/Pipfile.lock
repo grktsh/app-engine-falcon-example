@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0c2c72ca839034db10ab599ff1e0eee3feef68d1c69c172bb0bccb736888f30"
+            "sha256": "09ad590434ec564efd5cd894070d635d27043bb27b6ca37b3b42ce95d8be8b46"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,11 @@
         },
         "falcon-oas": {
             "hashes": [
-                "sha256:683769a7a77377b01eaeac02a1f965474f177abe8808510b98672b0b52beef13",
-                "sha256:c57c3f6f34963bab0a594790c2a306e11300e35903ebb6b2c071c1da30d6eca5"
+                "sha256:47aad5b2e9a46835afb99d1a28870222e012fa1756e73c55eea90709566eda25",
+                "sha256:9d46bd24bd9624c585d9efcf0a6b3dfb5bf1cd2855bf8cfed7bcdfcbcee58980"
             ],
             "index": "pypi",
-            "version": "==0.1.2"
+            "version": "==0.2.0"
         },
         "functools32": {
             "hashes": [
@@ -119,7 +119,7 @@
                 "sha256:27594cf4fc279f321974061ac69164aaebd2749af962ac8686b20503ac0bcf2d",
                 "sha256:9d51fe0a382f05b6b117c5e601fc219fede4a8c71703324af3f7d883aef476a3"
             ],
-            "markers": "python_version < '3.2'",
+            "markers": "python_version == '2.7'",
             "version": "==3.7.3"
         },
         "coverage": {

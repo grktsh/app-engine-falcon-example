@@ -1,4 +1,4 @@
-x-user-loader: auth:user_loader
+x-falcon-oas-implementor: auth.user_loader
 type: apiKey
 name: X-API-Key
 in: header

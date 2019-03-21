@@ -1,4 +1,4 @@
-x-falcon-resource: api.v1.pets:Item
+x-falcon-oas-implementor: api.v1.pets.Item
 get:
   responses:
     '200':
