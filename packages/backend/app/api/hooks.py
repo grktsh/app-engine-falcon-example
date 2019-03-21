@@ -5,8 +5,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import falcon
-from typing import Any  # noqa: F401
-from typing import Dict  # noqa: F401
+from typing import Any
+from typing import Dict
 
 from ..entities.pets import Pet
 

@@ -4,9 +4,9 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from typing import Dict  # noqa: F401
+from typing import Dict
 
-from ...entities.pets import Pet  # noqa: F401
+from ...entities.pets import Pet
 
 
 def pet_dict(pet):
